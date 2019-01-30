@@ -3,10 +3,7 @@ import Link from 'next/link';
 const Home = () => {
   return (
     <div>
-      <p>Hey!</p>
-      <Link href='/sell'>
-        <a>Sell</a>
-      </Link>
+      <h3>Home</h3>
     </div>
   );
 };
