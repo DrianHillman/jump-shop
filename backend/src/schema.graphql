@@ -1,13 +1,9 @@
-# Your visible API
-
-type Dog {
-  name: String!
-}
+# import * from './generated/prisma.graphql'
 
 type Query {
-  dogs: [Dog]!
+  items: [Item]!
 }
 
 type Mutation {
-  createDog(name: String!): Dog
+  createItem(title: String, description: String, price: Int, image: String, largeImage: String): Item!
 }
