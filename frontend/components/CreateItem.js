@@ -79,6 +79,7 @@ class CreateItem extends Component {
             }}>
             <Error error={error} />
             <fieldset disabled={loading} aria-busy={loading}>
+              <h2>Sell an Item</h2>
               <label htmlFor='file'>
                 Image
                 <input
@@ -130,7 +131,6 @@ class CreateItem extends Component {
               </label>
               <button type='submit'>Submit</button>
             </fieldset>
-            <h2>Sell an Item</h2>
           </Form>
         )}
       </Mutation>

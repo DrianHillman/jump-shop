@@ -2,8 +2,16 @@
 
 type Query {
   items: [Item]!
+  item(where: ItemWhereUniqueInput!): Item
 }
 
 type Mutation {
-  createItem(title: String, description: String, price: Int, image: String, largeImage: String): Item!
+  createItem(
+    title: String
+    description: String
+    price: Int
+    image: String
+    largeImage: String
+  ): Item!
+  updateItem(id: ID!, title: String, description: String, price: Int): Item!
 }
