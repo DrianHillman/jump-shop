@@ -5,6 +5,7 @@ import Title from './styles/Title';
 import ItemStyles from './styles/ItemStyles';
 import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
+import DeleteButton from './DeleteButton';
 
 export default class Item extends Component {
   static propTypes = {
@@ -16,13 +17,15 @@ export default class Item extends Component {
     return (
       <ItemStyles>
         {item.image && <img src={item.image} alt={item.title} />}
-        <Link
-          href={{
-            pathname: '/item',
-            query: { id: item.id },
-          }}>
-          <a>{item.title}</a>
-        </Link>
+        <Title>
+          <Link
+            href={{
+              pathname: '/item',
+              query: { id: item.id },
+            }}>
+            <a>{item.title}</a>
+          </Link>
+        </Title>
         <PriceTag>{formatMoney(item.price)}</PriceTag>
         <p>{item.description}</p>
 
@@ -40,7 +43,7 @@ export default class Item extends Component {
             </a>
           </Link>
           <button>Add To Cart</button>
-          <button>Delete</button>
+          <DeleteButton id={item.id}>Delete Item</DeleteButton>
         </div>
       </ItemStyles>
     );
