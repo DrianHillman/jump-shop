@@ -14,13 +14,7 @@ const CREATE_ITEM_MUTATION = gql`
     $image: String
     $largeImage: String
   ) {
-    createItem(
-      title: $title
-      description: $description
-      price: $price
-      image: $image
-      largeImage: $largeImage
-    ) {
+    createItem(title: $title, description: $description, price: $price, image: $image, largeImage: $largeImage) {
       id
     }
   }
@@ -90,9 +84,7 @@ class CreateItem extends Component {
                   required
                   onChange={this.uploadFile}
                 />
-                {this.state.image && (
-                  <img src={this.state.image} alt='Upload Preview' width='200' />
-                )}
+                {this.state.image && <img src={this.state.image} alt='Upload Preview' width='200' />}
               </label>
               <label htmlFor='title'>
                 Title

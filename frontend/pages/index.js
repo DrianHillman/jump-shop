@@ -2,8 +2,7 @@ import Items from '../components/Items';
 
 const Home = props => (
   <div>
-    <h3>Home</h3>
-    <Items />
+    <Items page={parseFloat(props.query.page || 1)} />
   </div>
 );
 
