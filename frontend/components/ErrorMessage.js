@@ -25,7 +25,7 @@ const DisplayError = ({ error }) => {
       <ErrorStyles key={i}>
         <p data-test='graphql-error'>
           <strong>Air Ball!</strong>
-          <small>{error.message.replace('GraphQL error: ', '')}</small>
+          {error.message.replace('GraphQL error: ', '')}
         </p>
       </ErrorStyles>
     ));
@@ -34,7 +34,7 @@ const DisplayError = ({ error }) => {
     <ErrorStyles>
       <p data-test='graphql-error'>
         <strong>Air Ball!</strong>
-        <small>{error.message.replace('GraphQL error: ', '')}</small>
+        {error.message.replace('GraphQL error: ', '')}
       </p>
     </ErrorStyles>
   );
