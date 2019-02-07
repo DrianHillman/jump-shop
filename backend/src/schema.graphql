@@ -19,4 +19,9 @@ type Mutation {
   deleteItem(id: ID!): Item
   signup(email: String!, password: String!, name: String!): User!
   signin(email: String!, password: String!): User!
+  signout: SuccessMessage
+}
+
+type SuccessMessage {
+  message: String
 }

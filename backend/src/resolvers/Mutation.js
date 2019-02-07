@@ -92,6 +92,11 @@ const Mutations = {
     // 5. Return the user
     return user;
   },
+  signout(parent, args, ctx, info) {
+    // clearCookie is available from cookieParser initialized in index.js
+    ctx.response.clearCookie('token');
+    return { message: `Goodbye!` };
+  },
 };
 
 module.exports = Mutations;
