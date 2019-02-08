@@ -7,6 +7,8 @@ const Item = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  border-radius: 16px;
+  padding: 1.5rem;
   img {
     width: 100%;
     height: 400px;

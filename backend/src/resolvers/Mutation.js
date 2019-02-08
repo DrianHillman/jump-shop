@@ -18,8 +18,8 @@ const Mutations = {
           user: {
             connect: {
               id: ctx.request.userId,
-            }
-          }
+            },
+          },
           ...args,
         },
       },
