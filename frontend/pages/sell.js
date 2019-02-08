@@ -1,6 +1,6 @@
 import CreateItem from '../components/CreateItem';
 
-const Sell = () => {
+const Sell = props => {
   return (
     <div>
       <CreateItem />
