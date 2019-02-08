@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { randomBytes } = require('crypto'); // via Node
 const { promisify } = require('util'); // via Node
+const { transport, makeANiceEmail } = require('../mail');
 
 const Mutations = {
   async createItem(parent, args, ctx, info) {
@@ -114,8 +115,23 @@ const Mutations = {
       where: { email: args.email },
       data: { resetToken, resetTokenExpiry },
     });
-    return { message: 'Request received!' };
     // 3. Email them that reset token
+    try {
+      const mailRes = await transport.sendMail({
+        from: 'noreply@thejump.shop',
+        to: user.email,
+        subject: 'Your Password Reset Token | The Jump Shop',
+        html: makeANiceEmail(`Your Password Reset Token is here!
+      \n\n
+      <a href="${
+        process.env.FRONTEND_URL
+      }/reset?resetToken=${resetToken}">Click Here to Reset</a>`),
+      });
+    } catch (error) {
+      throw new Error(`Please try again. Message failed to send.\n\n${error}`);
+    }
+    // 4. Return the message
+    return { message: 'Request received!' };
   },
   async resetPassword(parent, args, ctx, info) {
     // 1. Check if the passwords match
