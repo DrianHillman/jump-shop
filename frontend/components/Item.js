@@ -6,6 +6,7 @@ import ItemStyles from './styles/ItemStyles';
 import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
 import DeleteButton from './DeleteButton';
+import AddToCart from './AddToCart';
 
 export default class Item extends Component {
   static propTypes = {
@@ -22,7 +23,8 @@ export default class Item extends Component {
             href={{
               pathname: '/item',
               query: { id: item.id },
-            }}>
+            }}
+          >
             <a>{item.title}</a>
           </Link>
         </Title>
@@ -34,7 +36,8 @@ export default class Item extends Component {
             href={{
               pathname: '/update',
               query: { id: item.id },
-            }}>
+            }}
+          >
             <a>
               Edit{' '}
               <span role='img' aria-label='Pencil Emoji' aria-labelledby='Edit'>
@@ -42,7 +45,7 @@ export default class Item extends Component {
               </span>
             </a>
           </Link>
-          <button>Add To Cart</button>
+          <AddToCart id={item.id} />
           <DeleteButton id={item.id}>Delete Item</DeleteButton>
         </div>
       </ItemStyles>
