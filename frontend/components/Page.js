@@ -53,6 +53,10 @@ injectGlobal`
     text-decoration: none;
     color: ${theme.black}
   }
+
+  button {
+    cursor: pointer;
+  }
 `;
 
 export default class Page extends Component {
