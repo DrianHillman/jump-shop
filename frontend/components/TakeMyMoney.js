@@ -31,6 +31,7 @@ export class TakeMyMoney extends Component {
   static propTypes = {};
 
   onToken = async (res, createOrder) => {
+    NProgress.start();
     // console.log(`onToken called!\n ${res.id}`);
     // manually call the mutation once we have the strip token
     const order = await createOrder({
@@ -40,7 +41,10 @@ export class TakeMyMoney extends Component {
     }).catch(err => {
       alert(err.message);
     });
-    console.log(order);
+    Router.push({
+      pathname: '/order',
+      query: { id: order.data.createOrder.id },
+    });
   };
 
   render() {
