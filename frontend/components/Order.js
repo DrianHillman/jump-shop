@@ -48,7 +48,7 @@ export class Order extends Component {
                 <title>The Jump Shop - Order {order.id}</title>
               </Head>
               <p>
-                <span>Order ID:</span>
+                <span>Order ID</span>
                 <span>{this.props.id}</span>
               </p>
               <p>
@@ -64,8 +64,12 @@ export class Order extends Component {
                 <span>{formatMoney(order.total)}</span>
               </p>
               <p>
-                <span>Item Count</span>
+                <span>Items</span>
                 <span>{order.items.length}</span>
+              </p>
+              <p>
+                <span>Quantity</span>
+                <span>{order.items.reduce((a, b) => a + b.quantity, 0)}</span>
               </p>
               <div className='items'>
                 {order.items.map(item => (
