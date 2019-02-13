@@ -30,16 +30,17 @@ function totalItems(cart) {
 export class TakeMyMoney extends Component {
   static propTypes = {};
 
-  onToken = (res, createOrder) => {
-    console.log(`onToken called!\n ${res.id}`);
+  onToken = async (res, createOrder) => {
+    // console.log(`onToken called!\n ${res.id}`);
     // manually call the mutation once we have the strip token
-    createOrder({
+    const order = await createOrder({
       variables: {
         token: res.id,
       },
     }).catch(err => {
       alert(err.message);
     });
+    console.log(order);
   };
 
   render() {
@@ -55,7 +56,7 @@ export class TakeMyMoney extends Component {
                 amount={calcTotalPrice(me.cart)}
                 name='The Jump Shop'
                 description={`Order of ${totalItems(me.cart)} items`}
-                image={me.cart[0].item && me.cart[0].item.image}
+                image={me.cart.length && me.cart[0].item && me.cart[0].item.image}
                 stripeKey='pk_test_XojgfSKG3ADna01CcCGYv860'
                 currency='USD'
                 email={me.email}
