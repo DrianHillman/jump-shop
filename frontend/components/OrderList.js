@@ -39,7 +39,7 @@ export class OrderList extends Component {
         {({ data: { orders }, loading, error }) => {
           if (error) return <Error error={error} />;
           if (loading) return <p>Loading...</p>;
-          console.log(orders);
+          // console.log(orders);
           return (
             <div>
               <h2>You have {orders.length} orders</h2>
