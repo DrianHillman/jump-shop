@@ -3,7 +3,6 @@ import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import Form from './styles/Form';
 import Error from './ErrorMessage';
-import { CURRENT_USER_QUERY } from './User';
 
 const REQUEST_RESET_MUTATION = gql`
   mutation REQUEST_RESET_MUTATION($email: String!) {
@@ -13,7 +12,7 @@ const REQUEST_RESET_MUTATION = gql`
   }
 `;
 
-export class Signin extends Component {
+export class RequestReset extends Component {
   state = {
     email: '',
   };
@@ -29,6 +28,7 @@ export class Signin extends Component {
           return (
             <Form
               method='post'
+              data-test='form'
               onSubmit={async e => {
                 e.preventDefault();
                 const res = await reset();
@@ -59,4 +59,5 @@ export class Signin extends Component {
   }
 }
 
-export default Signin;
+export default RequestReset;
+export { REQUEST_RESET_MUTATION };
