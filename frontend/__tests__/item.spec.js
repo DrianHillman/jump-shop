@@ -42,7 +42,7 @@ describe('<Item />', () => {
     const wrapper = shallow(<ItemComponent item={fakeItem} />);
     const buttonList = wrapper.find('.buttonList');
 
-    console.log(wrapper.debug());
+    // console.log(wrapper.debug());
 
     expect(buttonList.children()).toHaveLength(3);
     expect(buttonList.find('Link').exists()).toBe(true);
