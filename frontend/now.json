@@ -1,0 +1,6 @@
+{
+  "name": "the-jump-shop",
+  "version": 2,
+  "builds": [{ "src": "package.json", "use": "@now/next" }],
+  "routes": [{ "src": "/pages", "dest": "/index.js" }]
+}

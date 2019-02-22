@@ -1,12 +1,12 @@
 {
-  "name": "jump-shop-frontend",
+  "name": "the-jump-shop-frontend",
   "version": "1.0.0",
   "description": "The Jump Shop! An example React, GraphQL, Next and Apollo Full-Stack Application",
   "main": "index.js",
   "scripts": {
     "dev": "next -p 7777",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "next start",
     "test": "NODE_ENV=test jest --watch",
     "test-win": "SET NODE_ENV=test&& jest --watch",
     "heroku-postbuild": "next build"
