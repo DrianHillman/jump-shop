@@ -1,5 +1,5 @@
-# source: https://us1.prisma.sh/dhillman24-a3f736/jump-shop/dev
-# timestamp: Tue Feb 12 2019 22:51:00 GMT-0500 (Eastern Standard Time)
+# source: https://jump-shop-2a6749d5af.herokuapp.com/jump-shop-prod/prod
+# timestamp: Thu Feb 21 2019 23:37:16 GMT-0500 (Eastern Standard Time)
 
 type AggregateCartItem {
   count: Int!
@@ -213,7 +213,6 @@ input CartItemUpdateManyMutationInput {
 input CartItemUpdateManyWithoutUserInput {
   create: [CartItemCreateWithoutUserInput!]
   connect: [CartItemWhereUniqueInput!]
-  set: [CartItemWhereUniqueInput!]
   disconnect: [CartItemWhereUniqueInput!]
   delete: [CartItemWhereUniqueInput!]
   update: [CartItemUpdateWithWhereUniqueWithoutUserInput!]
@@ -1201,7 +1200,6 @@ input OrderItemUpdateManyDataInput {
 input OrderItemUpdateManyInput {
   create: [OrderItemCreateInput!]
   connect: [OrderItemWhereUniqueInput!]
-  set: [OrderItemWhereUniqueInput!]
   disconnect: [OrderItemWhereUniqueInput!]
   delete: [OrderItemWhereUniqueInput!]
   update: [OrderItemUpdateWithWhereUniqueNestedInput!]
