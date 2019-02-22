@@ -43,7 +43,7 @@ export class Order extends Component {
           if (loading) return <p>Loading...</p>;
           const order = data.order;
           return (
-            <OrderStyles>
+            <OrderStyles data-test='order'>
               <Head>
                 <title>The Jump Shop - Order {order.id}</title>
               </Head>
@@ -93,4 +93,5 @@ export class Order extends Component {
   }
 }
 
+export { SINGLE_ORDER_QUERY };
 export default Order;
