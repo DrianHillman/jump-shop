@@ -87,7 +87,7 @@ describe('<CreateItem />', () => {
           data: {
             createItem: {
               ...item,
-              __typeName: 'Item',
+              __typename: 'Item',
             },
           },
         },
