@@ -1,5 +1,6 @@
 {
   "name": "the-jump-shop",
+  "alias": "the-jump-shop.now.sh",
   "version": 2,
   "builds": [{ "src": "package.json", "use": "@now/next" }],
   "routes": [{ "src": "/pages", "dest": "/index.js" }]
