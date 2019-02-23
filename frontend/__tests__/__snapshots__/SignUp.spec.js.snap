@@ -2,7 +2,7 @@
 
 exports[`<Signup /> should render and match snapshot 1`] = `
 <form
-  className="Form-sc-1cywroj-0 kSAaam"
+  className="Form-sc-1cywroj-0 gbUuYE"
   method="post"
   onSubmit={[Function]}
 >
@@ -31,7 +31,7 @@ exports[`<Signup /> should render and match snapshot 1`] = `
     <label
       htmlFor="name"
     >
-      Name
+      First Name
       <input
         name="name"
         onChange={[Function]}

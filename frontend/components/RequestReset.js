@@ -36,7 +36,7 @@ export class RequestReset extends Component {
               }}
             >
               <fieldset disabled={loading} aria-busy={loading}>
-                <h2>Request a Password Reset</h2>
+                <h2>Password Reset</h2>
                 <Error error={error} />
                 {!error && !loading && called && <p>Success! Check your email for a reset link!</p>}
                 <label htmlFor='email'>
@@ -49,7 +49,7 @@ export class RequestReset extends Component {
                     onChange={this.saveToState}
                   />
                 </label>
-                <button type='submit'>Request Reset!</button>
+                <button type='submit'>Request Reset</button>
               </fieldset>
             </Form>
           );

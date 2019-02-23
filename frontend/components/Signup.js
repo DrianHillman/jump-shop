@@ -58,7 +58,7 @@ export class Signup extends Component {
                   />
                 </label>
                 <label htmlFor='name'>
-                  Name
+                  First Name
                   <input
                     type='text'
                     name='name'

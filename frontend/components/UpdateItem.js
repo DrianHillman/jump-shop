@@ -93,7 +93,6 @@ class UpdateItem extends Component {
                         id='description'
                         name='description'
                         placeholder='Please enter a description'
-                        required
                         defaultValue={data.item.description}
                         onChange={this.handleChange}
                       />

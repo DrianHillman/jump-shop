@@ -2,7 +2,7 @@
 
 exports[`<RequestReset /> should render properly on the page and matches snapshot 1`] = `
 <form
-  className="Form-sc-1cywroj-0 kSAaam"
+  className="Form-sc-1cywroj-0 gbUuYE"
   data-test="form"
   method="post"
   onSubmit={[Function]}
@@ -12,7 +12,7 @@ exports[`<RequestReset /> should render properly on the page and matches snapsho
     disabled={false}
   >
     <h2>
-      Request a Password Reset
+      Password Reset
     </h2>
     <DisplayError
       error={Object {}}
@@ -32,7 +32,7 @@ exports[`<RequestReset /> should render properly on the page and matches snapsho
     <button
       type="submit"
     >
-      Request Reset!
+      Request Reset
     </button>
   </fieldset>
 </form>
