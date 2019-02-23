@@ -15,7 +15,7 @@ const NavStyles = styled.ul`
     text-transform: uppercase;
     font-weight: 900;
     font-size: 1em;
-    font-family: 'Radnika Next';
+    font-family: 'Radnika Next', -apple-system, Arial, Helvetica, sans-serif;
     line-height: 2;
     color: ${props => props.theme.black};
     background: none;

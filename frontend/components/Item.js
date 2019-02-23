@@ -38,12 +38,12 @@ export default class Item extends Component {
               query: { id: item.id },
             }}
           >
-            <a>
+            <button>
               Edit{' '}
               <span role='img' aria-label='Pencil Emoji' aria-labelledby='Edit'>
                 ✏️
               </span>
-            </a>
+            </button>
           </Link>
           <AddToCart id={item.id} />
           <DeleteButton id={item.id}>Delete Item</DeleteButton>

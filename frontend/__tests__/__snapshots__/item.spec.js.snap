@@ -41,7 +41,7 @@ exports[`<Item /> should render and match the snapshot 1`] = `
         }
       }
     >
-      <a>
+      <button>
         Edit
          
         <span
@@ -51,7 +51,7 @@ exports[`<Item /> should render and match the snapshot 1`] = `
         >
           ✏️
         </span>
-      </a>
+      </button>
     </Link>
     <AddToCart
       id="ABC123"

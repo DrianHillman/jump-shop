@@ -2,7 +2,7 @@
 
 exports[`<Pagination /> should render pagination for 30 items 1`] = `
 <div
-  className="PaginationStyles-qpxy5b-0 fIMRpP"
+  className="PaginationStyles-zso60o-0 iKARzg"
   data-test="pagination"
 >
   <SideEffect(Head)>
@@ -41,7 +41,7 @@ exports[`<Pagination /> should render pagination for 30 items 1`] = `
   </p>
   <p>
     30
-     Items Total
+     Total Items
   </p>
   <Link
     href={

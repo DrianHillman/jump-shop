@@ -31,7 +31,7 @@ injectGlobal`
     font-weight: normal;
     font-style: normal;
   }
-
+  
   html {
     box-sizing: border-box;
     font-size: 8px;
@@ -46,7 +46,7 @@ injectGlobal`
     margin: 0;
     font-size: 2rem;
     line-height: 2;
-    font-family: 'Radnika Next';
+    font-family: 'Radnika Next', -apple-system, Arial, Helvetica, sans-serif;
   }
 
   a {
