@@ -15,20 +15,24 @@ const Form = styled.form`
   background: rgba(0, 0, 0, 0.02);
   border: 5px solid white;
   padding: 20px;
-  font-size: 1.5rem;
-  line-height: 1.5;
+  font-size: 1.33rem;
+  line-height: 1;
   font-weight: 600;
   label {
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+    margin-top: 2.5rem;
   }
   input,
   textarea,
   select {
     width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
+    padding: 1rem;
+    font-size: 2rem;
     border: 1px solid black;
+    border-radius: 4px;
+    margin-top: 1rem;
+
     &:focus {
       outline: 0;
       border-color: ${props => props.theme.red};
@@ -40,7 +44,7 @@ const Form = styled.form`
     background: red;
     color: white;
     border: 0;
-    font-size: 2rem;
+    font-size: 2.75rem;
     font-weight: 600;
     padding: 0.5rem 1.2rem;
   }
