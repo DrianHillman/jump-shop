@@ -6,6 +6,19 @@ exports[`<AddToCart /> should render and match the snap shot 1`] = `
   onClick={[Function]}
 >
   Add
-   to Cart 🛒
+   to Cart
+   
+  <span
+    aria-label="Cart Emoji"
+    aria-labelledby="Shopping Cart"
+    role="img"
+    style={
+      Object {
+        "padding": "0 0.5rem",
+      }
+    }
+  >
+    🛒
+  </span>
 </button>
 `;

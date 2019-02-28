@@ -23,7 +23,15 @@ export class AddToCart extends Component {
       >
         {(addToCart, { error, loading }) => (
           <button onClick={addToCart} disabled={loading}>
-            Add{loading && 'ing'} to Cart 🛒
+            Add{loading && 'ing'} to Cart{' '}
+            <span
+              role='img'
+              aria-label='Cart Emoji'
+              aria-labelledby='Shopping Cart'
+              style={{ padding: '0 0.5rem' }}
+            >
+              🛒
+            </span>
           </button>
         )}
       </Mutation>

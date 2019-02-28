@@ -40,7 +40,12 @@ export default class Item extends Component {
           >
             <button>
               Edit{' '}
-              <span role='img' aria-label='Pencil Emoji' aria-labelledby='Edit'>
+              <span
+                role='img'
+                aria-label='Pencil Emoji'
+                aria-labelledby='Edit'
+                style={{ padding: '0 0.5rem' }}
+              >
                 ✏️
               </span>
             </button>

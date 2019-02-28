@@ -48,6 +48,11 @@ exports[`<Item /> should render and match the snapshot 1`] = `
           aria-label="Pencil Emoji"
           aria-labelledby="Edit"
           role="img"
+          style={
+            Object {
+              "padding": "0 0.5rem",
+            }
+          }
         >
           ✏️
         </span>
