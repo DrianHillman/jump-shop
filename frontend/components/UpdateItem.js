@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import Router from 'next/router';
 import Form from './styles/Form';
 import Error from './ErrorMessage';
+import styled from 'styled-components';
 import formatMoney from '../lib/formatMoney';
 
 const SINGLE_ITEM_QUERY = gql`
@@ -28,8 +29,16 @@ const UPDATE_ITEM_MUTATION = gql`
   }
 `;
 
+const SuccessMessage = styled.span`
+  color: #393939;
+  margin: 0 3rem;
+  font-size: 13px;
+`;
+
 class UpdateItem extends Component {
-  state = {};
+  state = {
+    showSuccess: false,
+  };
 
   handleChange = e => {
     const { name, type, value } = e.target;
@@ -39,15 +48,14 @@ class UpdateItem extends Component {
 
   updateItem = async (e, updateItemMutation) => {
     e.preventDefault();
-    console.log('Updating Item');
-    console.log(this.state);
+    this.setState({ showSuccess: false });
     const res = await updateItemMutation({
       variables: {
         id: this.props.id,
         ...this.state,
       },
     });
-    console.log('Updated!');
+    this.setState({ showSuccess: true });
   };
 
   render() {
@@ -98,6 +106,7 @@ class UpdateItem extends Component {
                       />
                     </label>
                     <button type='submit'>Sav{loading ? 'ing' : 'e'} Changes</button>
+                    {this.state.showSuccess ? <SuccessMessage>Success ✓</SuccessMessage> : null}
                   </fieldset>
                 </Form>
               )}
