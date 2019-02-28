@@ -6,7 +6,7 @@ import Form from './styles/Form';
 import Error from './ErrorMessage';
 import styled from 'styled-components';
 import formatMoney from '../lib/formatMoney';
-import MDSpinner from 'react-md-spinner';
+import Spinner from './Spinner';
 
 const SINGLE_ITEM_QUERY = gql`
   query SINGLE_ITEM_QUERY($id: ID!) {
@@ -63,10 +63,7 @@ class UpdateItem extends Component {
     return (
       <Query query={SINGLE_ITEM_QUERY} variables={{ id: this.props.id }}>
         {({ data, loading }) => {
-          if (loading)
-            return (
-              <MDSpinner color1='#FF0000' color2='#3A3A3A' color3='#FF0000' color4='#3A3A3A' />
-            );
+          if (loading) return <Spinner />;
           if (!data.item) return <p>No item found for ID: {this.props.id}</p>;
           return (
             <Mutation mutation={UPDATE_ITEM_MUTATION} variables={this.state}>

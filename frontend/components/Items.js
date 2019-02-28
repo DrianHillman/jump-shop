@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Item from './Item';
 import Pagination from './Pagination';
 import { perPage } from '../config';
-import MDSpinner from 'react-md-spinner';
+import Spinner from './Spinner';
 
 const ALL_ITEMS_QUERY = gql`
   query ALL_ITEMS_QUERY($skip: Int = 0, $first: Int = ${perPage}) {
@@ -44,10 +44,7 @@ class Items extends Component {
           }}
         >
           {({ data, error, loading }) => {
-            if (loading)
-              return (
-                <MDSpinner color1='#FF0000' color2='#3A3A3A' color3='#FF0000' color4='#3A3A3A' />
-              );
+            if (loading) return <Spinner />;
             if (error) return <p>Error: {error.message}</p>;
             return (
               <ItemsList>

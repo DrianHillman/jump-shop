@@ -4,7 +4,7 @@ import { Query } from 'react-apollo';
 import Error from './ErrorMessage';
 import styled from 'styled-components';
 import Head from 'next/head';
-import MDSpinner from 'react-md-spinner';
+import Spinner from './Spinner';
 
 const SingleItemStyles = styled.div`
   max-width: 1200px;
@@ -44,10 +44,7 @@ export class SingleItem extends Component {
       <Query query={SINGLE_ITEM_QUERY} variables={{ id: this.props.id }}>
         {({ error, loading, data }) => {
           if (error) return <Error error={error} />;
-          if (loading)
-            return (
-              <MDSpinner color1='#FF0000' color2='#3A3A3A' color3='#FF0000' color4='#3A3A3A' />
-            );
+          if (loading) return <Spinner />;
           if (!data.item) return <p>No Item Found for {this.props.id}</p>;
           const item = data.item;
           return (

@@ -1,13 +1,12 @@
 import { Query } from 'react-apollo';
 import { CURRENT_USER_QUERY } from './User';
 import Signin from './Signin';
-import MDSpinner from 'react-md-spinner';
+import Spinner from './Spinner';
 
 const PleaseSignIn = props => (
   <Query query={CURRENT_USER_QUERY}>
     {({ data, loading }) => {
-      if (loading)
-        return <MDSpinner color1='#FF0000' color2='#3A3A3A' color3='#FF0000' color4='#3A3A3A' />;
+      if (loading) return <Spinner />;
       if (!data.me) {
         return (
           <div>

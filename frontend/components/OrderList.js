@@ -7,7 +7,7 @@ import gql from 'graphql-tag';
 import formatMoney from '../lib/formatMoney';
 import OrderItemStyles from './styles/OrderItemStyles';
 import Error from './ErrorMessage';
-import MDSpinner from 'react-md-spinner';
+import Spinner from './Spinner';
 
 const USER_ORDERS_QUERY = gql`
   query USER_ORDERS_QUERY {
@@ -39,10 +39,7 @@ export class OrderList extends Component {
       <Query query={USER_ORDERS_QUERY}>
         {({ data: { orders }, loading, error }) => {
           if (error) return <Error error={error} />;
-          if (loading)
-            return (
-              <MDSpinner color1='#FF0000' color2='#3A3A3A' color3='#FF0000' color4='#3A3A3A' />
-            );
+          if (loading) return <Spinner />;
 
           return (
             <div>
