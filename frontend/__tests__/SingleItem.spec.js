@@ -21,7 +21,7 @@ describe('<SingleItem/>', () => {
       </MockedProvider>
     );
     // console.log(wrapper.debug());
-    expect(wrapper.text()).toContain('Loading...');
+    expect(wrapper.find('MDSpinner')).toBeTruthy();
     // wait for the loading state to pass
     await wait();
     wrapper.update();

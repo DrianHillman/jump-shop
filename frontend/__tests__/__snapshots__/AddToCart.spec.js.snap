@@ -8,17 +8,19 @@ exports[`<AddToCart /> should render and match the snap shot 1`] = `
   Add
    to Cart
    
-  <span
+  <AddToCart__Icon
     aria-label="Cart Emoji"
     aria-labelledby="Shopping Cart"
     role="img"
-    style={
-      Object {
-        "padding": "0 0.5rem",
-      }
-    }
   >
-    🛒
-  </span>
+    <span
+      aria-label="Cart Emoji"
+      aria-labelledby="Shopping Cart"
+      className="AddToCart__Icon-y2jgvr-0 eZjlUJ"
+      role="img"
+    >
+      🛒
+    </span>
+  </AddToCart__Icon>
 </button>
 `;

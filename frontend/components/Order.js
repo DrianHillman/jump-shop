@@ -7,6 +7,7 @@ import gql from 'graphql-tag';
 import formatMoney from '../lib/formatMoney';
 import Error from './ErrorMessage';
 import OrderStyles from './styles/OrderStyles';
+import MDSpinner from 'react-md-spinner';
 
 const SINGLE_ORDER_QUERY = gql`
   query SINGLE_ORDER_QUERY($id: ID!) {
@@ -40,7 +41,10 @@ export class Order extends Component {
       <Query query={SINGLE_ORDER_QUERY} variables={{ id: this.props.id }}>
         {({ data, error, loading }) => {
           if (error) return <Error error={error} />;
-          if (loading) return <p>Loading...</p>;
+          if (loading)
+            return (
+              <MDSpinner color1='#FF0000' color2='#3A3A3A' color3='#FF0000' color4='#3A3A3A' />
+            );
           const order = data.order;
           return (
             <OrderStyles data-test='order'>

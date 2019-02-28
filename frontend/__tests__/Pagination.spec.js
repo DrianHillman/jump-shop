@@ -30,17 +30,6 @@ function makeMocksFor(length) {
 }
 
 describe('<Pagination />', () => {
-  it('should display a loading message', async () => {
-    const wrapper = mount(
-      <MockedProvider mocks={makeMocksFor(1)}>
-        <Pagination page={1} />
-      </MockedProvider>
-    );
-    // const pagination = wrapper.find('[data-test="pagination"]');
-    // console.log(wrapper.debug());
-    expect(wrapper.text()).toContain('Loading...');
-  });
-
   it('should render pagination for 30 items', async () => {
     const wrapper = mount(
       <MockedProvider mocks={makeMocksFor(30)}>
