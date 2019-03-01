@@ -22,7 +22,6 @@ const Nav = () => (
               <a>Orders</a>
             </Link>
             <a>Account</a>
-
             <SignOut />
             <Mutation mutation={TOGGLE_CART_MUTATION}>
               {toggleCart => (
