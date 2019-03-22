@@ -2,16 +2,25 @@ import React from 'react';
 import { Query, Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import { adopt } from 'react-adopt';
+import styled from 'styled-components';
 import User from './User';
 import CartStyles from './styles/CartStyles';
 import Supreme from './styles/Supreme';
 import CloseButton from './styles/CloseButton';
 import StyledButton from './styles/StyledButton';
-import Header from './Header';
 import CartItem from './CartItem';
 import calcTotalPrice from '../lib/calcTotalPrice';
 import formatMoney from '../lib/formatMoney';
 import TakeMyMoney from './TakeMyMoney';
+
+const Disclaimer = styled.p`
+  font-size: 11px;
+  color: #3a3a3a;
+
+  & a {
+    text-decoration: underline red;
+  }
+`;
 
 const LOCAL_STATE_QUERY = gql`
   query {
@@ -62,6 +71,20 @@ const Cart = () => {
                 </TakeMyMoney>
               ) : null}
             </footer>
+            <Disclaimer>
+              Stripe checkout is fully functional but is in test mode! Do not enter any actual card
+              info.
+              <br />
+              Copy one of{' '}
+              <a
+                href='https://stripe.com/docs/testing#cards'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Stripe's Dummy Card Numbers
+              </a>{' '}
+              to give order placement a spin!
+            </Disclaimer>
           </CartStyles>
         );
       }}

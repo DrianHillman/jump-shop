@@ -59,11 +59,7 @@ export class Order extends Component {
               </p>
               <p>
                 <span>Date</span>
-                <span>
-                  {format(parseISO(order.createdAt), 'MMMM d, YYYY h:mm a', {
-                    awareOfUnicodeTokens: true,
-                  })}
-                </span>
+                <span>{format(parseISO(order.createdAt), 'MMMM d, yyyy h:mm a')}</span>
               </p>
               <p>
                 <span>Order Total</span>
