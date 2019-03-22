@@ -13,12 +13,19 @@ import calcTotalPrice from '../lib/calcTotalPrice';
 import formatMoney from '../lib/formatMoney';
 import TakeMyMoney from './TakeMyMoney';
 
-const Disclaimer = styled.p`
+const Disclaimer = styled.div`
   font-size: 11px;
   color: #3a3a3a;
 
   & a {
-    text-decoration: underline red;
+    text-decoration: underline #aa0000;
+  }
+
+  & code {
+    font-size: 12px;
+    background-color: #eee;
+    padding: 2px 4px;
+    margin: 0 4px;
   }
 `;
 
@@ -62,7 +69,6 @@ const Cart = () => {
                 <CartItem key={cartItem.id} cartItem={cartItem} />
               ))}
             </ul>
-
             <footer>
               <p>{formatMoney(calcTotalPrice(me.cart))}</p>
               {me.cart.length ? (
@@ -72,18 +78,23 @@ const Cart = () => {
               ) : null}
             </footer>
             <Disclaimer>
-              Stripe checkout is fully functional but is in test mode! Do not enter any actual card
-              info.
-              <br />
-              Copy one of{' '}
-              <a
-                href='https://stripe.com/docs/testing#cards'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Stripe's Dummy Card Numbers
-              </a>{' '}
-              to give order placement a spin!
+              <p>
+                Stripe checkout is fully functional but this site is in test mode! Do not enter any
+                actual card info. Copy one of{' '}
+                <a
+                  href='https://stripe.com/docs/testing#cards'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Stripe's Dummy Card Numbers
+                </a>{' '}
+                to give order placement a spin!
+              </p>
+              <p>
+                Dummy Card:
+                <code>4242424242424242</code> <code>00/00</code>
+                <code>000</code>
+              </p>
             </Disclaimer>
           </CartStyles>
         );
