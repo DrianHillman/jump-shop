@@ -7,7 +7,7 @@ exports[`<Cart /> should render and match snappy 1`] = `
     title="close"
   >
     <button
-      className="CloseButton-sr1b95-0 ktDUcg"
+      className="CloseButton-sc-1ra0913-0 gqJAzm"
       onClick={[Function]}
       title="close"
     >
@@ -16,7 +16,7 @@ exports[`<Cart /> should render and match snappy 1`] = `
   </CloseButton>
   <Supreme>
     <h3
-      className="Supreme-sc-1xxnc5i-0 jRQpxX"
+      className="Supreme-sc-17cuee6-0 ieACiA"
     >
       Miss Coleman Berge
       's Cart

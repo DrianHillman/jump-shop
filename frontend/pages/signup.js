@@ -10,13 +10,28 @@ const Columns = styled.section`
   grid-gap: 20px;
 `;
 
+const DemoLogin = styled.div`
+  font-size: 0.8em;
+  margin-top: 2em;
+`;
+
 const SignupPage = props => {
   return (
-    <Columns>
-      <Signup />
-      <Signin />
-      <RequestReset />
-    </Columns>
+    <>
+      <Columns>
+        <Signup />
+        <Signin />
+        <RequestReset />
+      </Columns>
+      <DemoLogin>
+        <p>Feel free to create an account, or Sign In as this demo Admin:</p>
+        <blockquote>
+          Username: demo@demo.com
+          <br />
+          Password: Admin1
+        </blockquote>
+      </DemoLogin>
+    </>
   );
 };
 
