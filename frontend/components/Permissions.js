@@ -48,7 +48,7 @@ const Permissions = props => {
           <div>
             {data.users && (
               <>
-                <h2>Manage Permissions</h2>
+                <h2>Manage Account Permissions</h2>
                 <Table>
                   <thead>
                     <tr>
