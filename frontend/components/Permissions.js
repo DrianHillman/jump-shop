@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import Table from './styles/Table';
 import StyledButton from './styles/StyledButton';
 import PropTypes from 'prop-types';
+import Spinner from './Spinner';
 
 const ALL_USERS_QUERY = gql`
   query {
@@ -39,29 +40,37 @@ const possiblePermissions = [
 const Permissions = props => {
   return (
     <Query query={ALL_USERS_QUERY}>
-      {({ data, loading, error }) => (
-        <div>
-          <Error error={error} />
-          <h2>Manage Permissions</h2>
-          <Table>
-            <thead>
-              <tr>
-                <th>NAME</th>
-                <th>EMAIL</th>
-                {possiblePermissions.map(permission => (
-                  <th key={permission}>{permission}</th>
-                ))}
-                <th>⇣</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.users.map(user => (
-                <UserPermissions user={user} key={user.id} />
-              ))}
-            </tbody>
-          </Table>
-        </div>
-      )}
+      {({ data, loading, error }) => {
+        if (error) return <Error error={error} />;
+        if (loading) return <Spinner />;
+
+        return (
+          <div>
+            {data.users && (
+              <>
+                <h2>Manage Permissions</h2>
+                <Table>
+                  <thead>
+                    <tr>
+                      <th>NAME</th>
+                      <th>EMAIL</th>
+                      {possiblePermissions.map(permission => (
+                        <th key={permission}>{permission}</th>
+                      ))}
+                      <th>⇣</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.users.map(user => (
+                      <UserPermissions user={user} key={user.id} />
+                    ))}
+                  </tbody>
+                </Table>
+              </>
+            )}
+          </div>
+        );
+      }}
     </Query>
   );
 };
@@ -102,7 +111,8 @@ class UserPermissions extends React.Component {
         variables={{
           permissions: this.state.permissions,
           userId: this.props.user.id,
-        }}>
+        }}
+      >
         {(updatePermissions, { loading, error }) => (
           <>
             {error && (
