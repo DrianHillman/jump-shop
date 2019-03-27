@@ -92,8 +92,8 @@ const Cart = () => {
               </p>
               <p>
                 Dummy Card:
-                <code>4242424242424242</code> <code>00/00</code>
-                <code>000</code>
+                <code>4242424242424242</code> <code>02/22</code>
+                <code>222</code>
               </p>
             </Disclaimer>
           </CartStyles>
