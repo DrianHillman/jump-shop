@@ -38,6 +38,7 @@ const SearchStyles = styled.div`
     padding: 10px;
     border: 0;
     font-size: 2rem;
+    font-family: 'Radnika Next', -apple-system, Arial, Helvetica, sans-serif;
     &.loading {
       animation: ${glow} 0.5s ease-in-out infinite alternate;
     }
