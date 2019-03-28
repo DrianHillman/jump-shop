@@ -4,7 +4,7 @@ const Supreme = styled.h3`
   background: ${props => props.theme.red};
   color: white;
   display: inline-block;
-  padding: 4px 5px;
+  padding: 0px 10px;
   transform: skew(-3deg);
   margin: 0;
   font-size: 4rem;
