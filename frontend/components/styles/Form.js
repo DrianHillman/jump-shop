@@ -15,7 +15,7 @@ const Form = styled.form`
   background: rgba(0, 0, 0, 0.02);
   border: 5px solid white;
   padding: 20px;
-  font-size: 1.33rem;
+  font-size: 1.66rem;
   line-height: 1;
   font-weight: 600;
   label {
@@ -25,6 +25,7 @@ const Form = styled.form`
   input,
   textarea,
   select {
+    font-family: -apple-system, Arial, Helvetica, sans-serif;
     width: 100%;
     padding: 1rem;
     font-size: 2rem;
@@ -39,6 +40,7 @@ const Form = styled.form`
   }
   button,
   input[type='submit'] {
+    font-family: 'Radnika Next', -apple-system, Arial, Helvetica, sans-serif;
     width: auto;
     background: red;
     color: white;
