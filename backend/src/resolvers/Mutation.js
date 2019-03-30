@@ -137,7 +137,7 @@ const Mutations = {
     // 3. Email them that reset token
     try {
       const mailRes = await transport.sendMail({
-        from: 'noreply@thejump.shop',
+        from: 'the-jump-shop@drian.co',
         to: user.email,
         subject: 'Your Password Reset Token | The Jump Shop',
         html: makeANiceEmail(`Your Password Reset Token is here!

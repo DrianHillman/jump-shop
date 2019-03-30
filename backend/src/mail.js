@@ -22,7 +22,7 @@ const makeANiceEmail = text => `
     <h2>Hello There!</h2>
     <p>${text}</p>
 
-    <p>🤘🏽, The Jump Shop</p>  
+    <p><strong>- 🏀The Jump Shop</strong></p>  
   </div>
 `;
 
